@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Play with variable font</title>
+  <style>
+    @import url('https://rsms.me/inter/inter.css');
+    html { font-family: 'Inter', sans-serif; }
+    @supports (font-variation-settings: normal) {
+      html { font-family: 'Inter var experimental', sans-serif; }
+    }
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .grid-container {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap:  0 0;
+      grid-template-areas: "first first" "second third";
+    }
+    .first,
+    .second,
+    .third {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      will-change: auto;
+      text-transform: uppercase;
+    }
+
+    .first  {
+      grid-area: first;
+      background-color: #e48aff;
+      font-size: 15vw;
+    }
+    .first .p {
+      -webkit-animation: firstAnimation 3.5s ease 100 both;
+      animation: firstAnimation 3.5s ease 100 both;
+    }
+    .first .l {
+      -webkit-animation: firstAnimation 3.5s ease .1s 100 both;
+      animation: firstAnimation 3.5s ease .1s 100 both;
+    }
+    .first .e {
+      -webkit-animation: firstAnimation 3.5s ease .22s 100 both;
+      animation: firstAnimation 3.5s ease .2s 100 both;
+    }
+    .first .a {
+      -webkit-animation: firstAnimation 3.5s ease .3s 100 both;
+      animation: firstAnimation 3.5s ease .3s 100 both;
+    }
+    .first .s {
+      -webkit-animation: firstAnimation 3.5s ease .4s 100 both;
+      animation: firstAnimation 3.5s ease .4s 100 both;
+    }
+    .first .ee {
+      -webkit-animation: firstAnimation 3.5s ease .5s 100 both;
+      animation: firstAnimation 3.5s ease .5s 100 both;
+    }
+
+    @keyframes firstAnimation {
+      0% {
+        font-variation-settings: "wght" 1;
+      }
+      25% {
+        font-variation-settings: "wght" 1000;
+      }
+      50% {
+        font-variation-settings: "wght" 1;
+      }
+      75% {
+        font-variation-settings: "wght" 1000;
+      }
+      100% {
+        font-variation-settings: "wght" 1;
+      }
+    }
+
+    .second  {
+      grid-area: second;
+      font-size: 10vw;
+      background-color: #ff8ae0;
+      -webkit-animation: secondAnimation 2s ease 100 both;
+      animation: secondAnimation 2s ease 100 both;
+    }
+
+    @keyframes secondAnimation {
+      0% {
+        font-weight: 100;
+        letter-spacing: 0.05em;
+      }
+      50% {
+        font-weight: 500;
+        letter-spacing: 0.1em;
+      }
+      100% {
+        font-weight: 100;
+        letter-spacing: 0.05em;
+      }
+    }
+
+    .third  {
+      grid-area: third;
+      font-size: 10vw;
+      background-color: #a98aff;
+      font-weight: 100;
+      -webkit-animation: thirdAnimation 3.5s ease .5s 100 both;
+      animation: thirdAnimation 3.5s ease .5s 100 both;
+    }
+
+    @keyframes thirdAnimation {
+      0% {
+        font-variation-settings: "slnt" 0, "wght" 1;
+      }
+      25% {
+        font-variation-settings: "slnt" -10, "wght" 500;
+      }
+      50% {
+        font-variation-settings: "slnt" 0, "wght" 1;
+      }
+      75% {
+        font-variation-settings: "slnt" -10, "wght" 500;
+      }
+      100% {
+        font-variation-settings: "slnt" 0, "wght" 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="first">
+      <div class="p">p</div>
+      <div class="l">l</div>
+      <div class="e">e</div>
+      <div class="a">a</div>
+      <div class="s">s</div>
+      <div class="ee">e</div>
+    </div>
+    <div class="second">
+      stay
+    </div>
+    <div class="third">
+      home
+    </div>
+  </div>
+
+</body>
+</html>
